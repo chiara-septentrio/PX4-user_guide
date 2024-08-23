@@ -28,10 +28,10 @@ Certain receivers are recommended for autopilot applications because of their ph
 - RTK positioning using corrections over MAVLink from a ground control station
 - Dual-antenna heading with mosaic-H-based receivers
 - Moving base heading with two single-antenna receivers
-- SBF logging to internal storage on the receiver
+- Flexible SBF logging to internal storage on the receiver
 - Logging of all communication with the receiver to internal storage on the flight controller
 - Automatic baud rate and port detection
-- Automatic, parameterized configuration for all features
+- Automatic, parameterized configuration for all features (can also be disabled)
 - Status and health monitoring from a MAVLink console
 
 ## Quick Start
@@ -40,7 +40,11 @@ For the physical connection between Septentrio GNSS receivers and flight control
 
 A few things are required for PX4 to support Septentrio receivers.
 First of all, the firmware you load on your flight controller needs to contain the Septentrio driver.
-This should be the case for most flight controller boards from PX4 v1.15.
+This should be the case for most flight controller boards from PX4 v1.15. It is currently the case for the following flight controllers :
+* [Nora](../flight_controller/cuav_nora.md)
+* [CubeOrange](../flight_controller/cubepilot_cube_orange.md) and [CubeOrange+](../../flight_controller/cubepilot_cube_orangeplus.md)
+* [PixRacer Pro](/flight_controller/pixracer.md)
+* PX4 version 2 through 4 see [here](../../flight_controller/autopilot_pixhawk_standard.md) for a more detailed list.
 
 You can confirm this by opening _QGroundControl_, connecting to the flight controller running the firmware you want to use, and checking whether the `Septentrio` parameter group is available in the parameter configuration screen.
 
